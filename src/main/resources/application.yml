@@ -1,0 +1,19 @@
+app:
+  storage:
+    backend: postgresStorage #s3Storage  # or postgresStorage
+    s3:
+      bucket: implicit-images-storage
+      region: us-east-2  # Change this to your bucket's region
+      endpoint: https://s3.us-east-2.amazonaws.com  # Change this to match your region
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:1235/image_storage
+    username: postgres
+    password: Gq83dQ3KPWky6jUE
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
